@@ -6,9 +6,9 @@ import {
 import { isShopifyError } from 'lib/type-guards';
 import { ensureStartsWith } from 'lib/utils';
 import {
-  revalidateTag,
+  unstable_cacheLife as cacheLife,
   unstable_cacheTag as cacheTag,
-  unstable_cacheLife as cacheLife
+  revalidateTag
 } from 'next/cache';
 import { cookies, headers } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
@@ -18,6 +18,13 @@ import {
   editCartItemsMutation,
   removeFromCartMutation
 } from './mutations/cart';
+import {
+  getArticleQuery,
+  getArticlesByTagQuery,
+  getBlogArticlesQuery,
+  getBlogQuery,
+  getBlogsQuery
+} from './queries/blog';
 import { getCartQuery } from './queries/cart';
 import {
   getCollectionProductsQuery,
@@ -32,6 +39,8 @@ import {
   getProductsQuery
 } from './queries/product';
 import {
+  Article,
+  Blog,
   Cart,
   Collection,
   Connection,
@@ -40,6 +49,11 @@ import {
   Page,
   Product,
   ShopifyAddToCartOperation,
+  ShopifyArticleOperation,
+  ShopifyArticlesByTagOperation,
+  ShopifyBlogArticlesOperation,
+  ShopifyBlogOperation,
+  ShopifyBlogsOperation,
   ShopifyCart,
   ShopifyCartOperation,
   ShopifyCollection,
@@ -102,19 +116,17 @@ export async function shopifyFetch<T>({
       body
     };
   } catch (e) {
+    console.error('Shopify API Error:', e);
     if (isShopifyError(e)) {
-      throw {
-        cause: e.cause?.toString() || 'unknown',
-        status: e.status || 500,
-        message: e.message,
-        query
-      };
+      const error = new Error(`Shopify API Error: ${e.message}`);
+      error.cause = e.cause?.toString() || 'unknown';
+      throw error;
     }
 
-    throw {
-      error: e,
-      query
-    };
+    // 创建一个更友好的错误信息
+    const error = new Error('Failed to fetch data from Shopify API');
+    error.cause = e;
+    throw error;
   }
 }
 
@@ -145,7 +157,7 @@ const reshapeCollection = (
 
   return {
     ...collection,
-    path: `/search/${collection.handle}`
+    path: `/collections/${collection.handle}`
   };
 };
 
@@ -458,6 +470,142 @@ export async function getProducts({
   });
 
   return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
+}
+
+/**
+ * 获取所有博客列表
+ */
+/**
+ * 获取所有博客分类（包含每个分类下的最新文章）
+ */
+export async function getBlogs(articlesFirst: number = 3): Promise<Blog[]> {
+  'use cache';
+  cacheTag(TAGS.blogs);
+  cacheLife('days');
+
+  const res = await shopifyFetch<ShopifyBlogsOperation>({
+    query: getBlogsQuery,
+    variables: {
+      first: 10,
+      articlesFirst
+    }
+  });
+
+  console.log('getBlogs', res);
+
+  return removeEdgesAndNodes(res.body.data.blogs);
+}
+
+/**
+ * 根据handle获取特定博客
+ */
+export async function getBlog(handle: string): Promise<Blog | undefined> {
+  'use cache';
+  cacheTag(TAGS.blogs);
+  cacheLife('days');
+
+  const res = await shopifyFetch<ShopifyBlogOperation>({
+    query: getBlogQuery,
+    variables: {
+      handle,
+      first: 20
+    }
+  });
+  console.log('getBlog', res);
+
+  return res.body.data.blogByHandle;
+}
+
+/**
+ * 根据博客和文章handle获取特定文章
+ */
+export async function getArticle(
+  blogHandle: string,
+  articleHandle: string
+): Promise<Article | undefined> {
+  'use cache';
+  cacheTag(TAGS.articles);
+  cacheLife('days');
+
+  const res = await shopifyFetch<ShopifyArticleOperation>({
+    query: getArticleQuery,
+    variables: {
+      blogHandle,
+      articleHandle
+    }
+  });
+
+  return res.body.data.blogByHandle?.articleByHandle;
+}
+
+/**
+ * 获取博客文章列表（支持分页）
+ */
+export async function getBlogArticles({
+  blogHandle,
+  first = 20,
+  after,
+  sortKey = 'PUBLISHED_AT',
+  reverse = true
+}: {
+  blogHandle: string;
+  first?: number;
+  after?: string;
+  sortKey?: string;
+  reverse?: boolean;
+}): Promise<{
+  articles: Article[];
+  pageInfo: {
+    hasNextPage: boolean;
+    hasPreviousPage: boolean;
+    startCursor: string;
+    endCursor: string;
+  };
+}> {
+  'use cache';
+  cacheTag(TAGS.articles);
+  cacheLife('days');
+
+  const res = await shopifyFetch<ShopifyBlogArticlesOperation>({
+    query: getBlogArticlesQuery,
+    variables: {
+      blogHandle,
+      first,
+      after,
+      sortKey,
+      reverse
+    }
+  });
+
+  const blogData = res.body.data.blogByHandle;
+  return {
+    articles: removeEdgesAndNodes(blogData.articles),
+    pageInfo: blogData.articles.pageInfo
+  };
+}
+
+/**
+ * 根据标签获取文章
+ */
+export async function getArticlesByTag(
+  blogHandle: string,
+  tag: string,
+  first: number = 20
+): Promise<Article[]> {
+  'use cache';
+  cacheTag(TAGS.articles);
+  cacheLife('days');
+
+  const res = await shopifyFetch<ShopifyArticlesByTagOperation>({
+    query: getArticlesByTagQuery,
+    variables: {
+      blogHandle,
+      tag,
+      first
+    }
+  });
+
+  return removeEdgesAndNodes(res.body.data.blogByHandle.articles);
 }
 
 // This is called from `app/api/revalidate.ts` so providers can control revalidation logic.

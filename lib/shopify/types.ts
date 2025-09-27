@@ -270,3 +270,123 @@ export type ShopifyProductsOperation = {
     sortKey?: string;
   };
 };
+
+/**
+ * Blog文章作者类型
+ */
+export type Author = {
+  displayName: string;
+  email: string;
+};
+
+/**
+ * Blog文章类型
+ */
+export type Article = {
+  id: string;
+  title: string;
+  handle: string;
+  contentHtml: string;
+  excerpt: string;
+  publishedAt: string;
+  createdAt: string;
+  updatedAt: string;
+  tags: string[];
+  image?: Image;
+  author: Author;
+  seo: SEO;
+  blog?: Blog;
+};
+
+/**
+ * Blog类型定义
+ */
+export type Blog = {
+  id: string;
+  title: string;
+  handle: string;
+  seo: SEO;
+  articles?: Connection<Article>;
+};
+
+/**
+ * Shopify博客列表操作类型
+ */
+export type ShopifyBlogsOperation = {
+  data: {
+    blogs: Connection<Blog>;
+  };
+  variables: {
+    first: number;
+    articlesFirst: number;
+  };
+};
+
+/**
+ * Shopify 单个Blog操作类型
+ */
+export type ShopifyBlogOperation = {
+  data: {
+    blogByHandle: Blog;
+  };
+  variables: {
+    handle: string;
+    first?: number;
+  };
+};
+
+/**
+ * Shopify 文章操作类型
+ */
+export type ShopifyArticleOperation = {
+  data: {
+    blogByHandle: {
+      articleByHandle: Article;
+    };
+  };
+  variables: {
+    blogHandle: string;
+    articleHandle: string;
+  };
+};
+
+/**
+ * Shopify Blog文章列表操作类型
+ */
+export type ShopifyBlogArticlesOperation = {
+  data: {
+    blogByHandle: {
+      articles: Connection<Article> & {
+        pageInfo: {
+          hasNextPage: boolean;
+          hasPreviousPage: boolean;
+          startCursor: string;
+          endCursor: string;
+        };
+      };
+    };
+  };
+  variables: {
+    blogHandle: string;
+    first?: number;
+    after?: string;
+    sortKey?: string;
+    reverse?: boolean;
+  };
+};
+
+/**
+ * Shopify 根据标签获取文章操作类型
+ */
+export type ShopifyArticlesByTagOperation = {
+  data: {
+    blogByHandle: {
+      articles: Connection<Article>;
+    };
+  };
+  variables: {
+    blogHandle: string;
+    tag: string;
+    first?: number;
+  };
+};

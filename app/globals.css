@@ -54,8 +54,8 @@
   --color-yuepo-950: #3a3c39;
   
   /* 字体系列 */
-  --font-family-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-family-mono: var(--font-geist-mono), monospace;
+  --font-family-sans: system-ui, sans-serif;
+  --font-family-mono: monospace;
   --font-family-chinese: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   
   /* 间距 */

@@ -2,7 +2,6 @@ import './globals.css';
 
 import { CartProvider } from 'components/cart/cart-context';
 import { Navbar } from 'components/layout/navbar';
-// import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
 import { ThemeProvider } from 'next-themes';
 import { ReactNode } from 'react';

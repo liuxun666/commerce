@@ -32,5 +32,8 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.1.13",
     "typescript": "5.8.2"
+  },
+  "resolutions": {
+    "next": "15.3.0-canary.13"
   }
 }

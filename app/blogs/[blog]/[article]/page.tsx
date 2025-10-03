@@ -162,8 +162,8 @@ function RecommendedProductsSkeleton() {
   return (
     <div className="space-y-6">
       <div className="h-6 bg-slate-200 dark:bg-slate-700 rounded w-1/3"></div>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: 3 }).map((_, i) => (
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {Array.from({ length: 4 }).map((_, i) => (
           <div key={i} className="animate-pulse">
             <div className="aspect-square bg-slate-200 dark:bg-slate-700 rounded-2xl mb-4"></div>
             <div className="space-y-2">

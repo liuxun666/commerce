@@ -11,7 +11,7 @@ interface BlogHeaderProps {
  */
 export default function BlogHeader({ blog }: BlogHeaderProps) {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <div className="relative overflow-hidden">
       {/* 背景装饰元素 */}
       <div className="absolute inset-0">
         {/* 渐变光斑 */}
@@ -25,7 +25,7 @@ export default function BlogHeader({ blog }: BlogHeaderProps) {
       </div>
 
       {/* 主要内容 */}
-      <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="relative mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
         <div className="text-center space-y-8">
           {/* 面包屑导航 */}
           <nav className="flex items-center justify-center space-x-2 text-sm text-slate-500 dark:text-slate-400">
@@ -37,13 +37,6 @@ export default function BlogHeader({ blog }: BlogHeaderProps) {
             </svg>
             <span className="text-slate-700 dark:text-slate-300">{blog.title}</span>
           </nav>
-
-          {/* 分类标签 */}
-          <div className="inline-flex items-center rounded-full bg-slate-100/80 dark:bg-slate-800/80 px-6 py-3 text-sm font-medium text-slate-600 dark:text-slate-400 backdrop-blur-sm">
-            <span className="mr-2 h-1.5 w-1.5 rounded-full bg-slate-400 dark:bg-slate-500"></span>
-            专题分类
-          </div>
-          
           {/* 标题 */}
           <h1 className="text-5xl font-light tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl">
             {blog.title}

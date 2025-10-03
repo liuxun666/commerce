@@ -1,3 +1,4 @@
+import { Carousel } from 'components/carousel';
 import { FeaturesSection } from 'components/features-section';
 import { ThreeItemGrid } from 'components/grid/three-items';
 import { HeroSection } from 'components/hero-section';
@@ -5,7 +6,7 @@ import Footer from 'components/layout/footer';
 
 export const metadata = {
   title: '檀轩 - 传承千年匠心之美',
-  description: '探索精美的传统手工艺品，传承千年匠心工艺，展现温润质感之美。每一件作品都承载着深厚的文化底蕴和艺术价值。',
+  description: '探索精美的传统手工艺品，传承千年匠心工艺，展现温润质感之美。每一件作品都承载着深深的文化底蕴和艺术价值。',
   keywords: '檀轩,traditional crafts,handmade art,artistry,history,quality',
   openGraph: {
     title: '檀轩 - 传承千年匠心之美',
@@ -36,8 +37,8 @@ export default function HomePage() {
       </section>
       
       {/* 热门推荐轮播 */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        {/* <Carousel /> */}
+      <section className="flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 w-5/6 mx-auto">
+        <Carousel />
       </section>
       
       {/* 页脚 */}

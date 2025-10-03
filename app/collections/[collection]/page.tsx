@@ -97,20 +97,6 @@ export default async function CategoryPage(props: {
             </div>
           ) : (
             <div className="space-y-12 animate-fade-in">
-              {/* 商品数量统计 */}
-              <div className="text-center">
-                <p className="text-xl text-yuepo-600 dark:text-yuepo-300 font-medium">
-                  共找到 <span className="font-bold text-yuepo-800 dark:text-shanfan-100 px-2 py-1 bg-fuguang-100/50 dark:bg-fuguang-900/30 rounded-lg">{products.length}</span> 件精美工艺品
-                </p>
-                
-                {/* 装饰性分隔线 */}
-                <div className="mt-8 flex items-center justify-center">
-                  <div className="h-0.5 bg-gradient-to-r from-transparent via-fuguang-400 to-transparent w-32 animate-pulse"></div>
-                  <div className="mx-4 w-2 h-2 bg-chizhi-400 rounded-full animate-float"></div>
-                  <div className="h-0.5 bg-gradient-to-r from-transparent via-fuguang-400 to-transparent w-32 animate-pulse"></div>
-                </div>
-              </div>
-              
               {/* 商品网格 */}
               <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
                 <ProductGridItems products={products} />

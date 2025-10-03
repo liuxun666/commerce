@@ -26,19 +26,6 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      {/* 标题区域 */}
-      <div className="mb-16 text-center">
-        <h2 className="text-3xl font-light tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
-          博客文章
-        </h2>
-        <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-          探索不同主题的精彩内容与深度见解
-        </p>
-        <div className="mt-8 flex justify-center">
-          <div className="h-px w-24 bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-600 to-transparent"></div>
-        </div>
-      </div>
-
       {/* 博客分类及文章展示 */}
       <div className="space-y-16">
         {blogs.map((blog) => (

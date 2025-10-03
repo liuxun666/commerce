@@ -137,7 +137,7 @@ export default async function SearchPage(props: {
             <div className="space-y-12 animate-fade-in">
               <div className="text-center">
                 <p className="text-xl text-yuepo-600 dark:text-yuepo-300 font-medium">
-                  共有 <span className="font-bold text-yuepo-800 dark:text-shanfan-100 px-2 py-1 bg-fuguang-100/50 dark:bg-fuguang-900/30 rounded-lg">{products.length}</span> 件精美工艺品
+                  共有 <span className="font-bold text-yuepo-800 dark:text-shanfan-100 px-2 py-1 bg-fuguang-100/50 dark:bg-fuguang-900/30 rounded-lg">{products.length}</span> 件商品和服务
                 </p>
                 
                 {/* 装饰性分隔线 */}

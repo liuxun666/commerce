@@ -1,8 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
 import { Article } from 'lib/shopify/types';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface ArticleGridProps {
   articles: Article[];
@@ -29,7 +29,7 @@ export default function ArticleGrid({ articles, blogHandle }: ArticleGridProps) 
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
       {/* 标题区域 */}
       <div className="mb-16 text-center">
         <h2 className="text-3xl font-light tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">

@@ -207,7 +207,7 @@ async function RelatedProducts({ id }: { id: string }) {
           相关推荐
         </h2>
         <p className="text-shanfan-600 dark:text-shanfan-400 text-lg font-medium animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          您可能还喜欢这些精美摆件
+          您可能还喜欢这些
         </p>
         
         {/* 装饰性分隔线 */}

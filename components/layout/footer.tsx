@@ -16,7 +16,7 @@ export default function Footer() {
       {/* 顶部装饰线 */}
       <div className="absolute top-0 left-0 right-0 h-px" />
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div className="w-full mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* 品牌信息 */}
           <div className="md:col-span-2 space-y-6">
@@ -61,12 +61,6 @@ export default function Footer() {
                 href="/search" 
                 className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
               >
-                产品系列
-              </Link>
-              <Link 
-                href="/search/featured" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
-              >
                 精选推荐
               </Link>
               <Link 
@@ -91,25 +85,19 @@ export default function Footer() {
             </h4>
             <nav className="space-y-4">
               <Link 
-                href="/help" 
+                href="/policies/terms-of-service" 
                 className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
               >
-                帮助中心
+                服务条款
               </Link>
               <Link 
-                href="/shipping" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
-              >
-                配送说明
-              </Link>
-              <Link 
-                href="/returns" 
+                href="/policies/refund-policy" 
                 className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
               >
                 退换政策
               </Link>
               <Link 
-                href="/privacy" 
+                href="/policies/privacy-policy" 
                 className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
               >
                 隐私政策

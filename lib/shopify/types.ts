@@ -88,6 +88,8 @@ export type ProductVariant = {
     value: string;
   }[];
   price: Money;
+  // 对比价（compare at price），用于展示打折前价格
+  compareAtPrice?: Money;
 };
 
 export type SEO = {

@@ -32,7 +32,7 @@ export default function ArticleGrid({ articles, blogHandle }: ArticleGridProps) 
     <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
       {/* 标题区域 */}
       <div className="mb-16 text-center">
-        <h2 className="text-3xl font-light tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
           最新文章
         </h2>
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">

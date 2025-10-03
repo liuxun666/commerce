@@ -35,10 +35,10 @@ export default function BlogHeader({ blog }: BlogHeaderProps) {
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="text-slate-700 dark:text-slate-300">{blog.title}</span>
+            <span className="font-bold text-slate-700 dark:text-slate-300">{blog.title}</span>
           </nav>
           {/* 标题 */}
-          <h1 className="text-5xl font-light tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl">
             {blog.title}
           </h1>
           

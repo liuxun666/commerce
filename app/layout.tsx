@@ -2,7 +2,7 @@ import './globals.css';
 
 import { CartProvider } from 'components/cart/cart-context';
 import { Navbar } from 'components/layout/navbar';
-import { GeistSans } from 'geist/font/sans';
+// import { GeistSans } from 'geist/font/sans';
 import { getCart } from 'lib/shopify';
 import { ThemeProvider } from 'next-themes';
 import { ReactNode } from 'react';
@@ -31,7 +31,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const cartPromise = getCart();
 
   return (
-    <html lang="zh-CN" className={GeistSans.className} suppressHydrationWarning>
+    <html lang="zh-CN" suppressHydrationWarning>
       <body className="bg-slate-50 text-slate-900 antialiased dark:bg-slate-900 dark:text-slate-100">
         <ThemeProvider
           attribute="class"

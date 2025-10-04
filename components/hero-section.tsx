@@ -54,7 +54,7 @@ export function HeroSection() {
           </Link>
           
           <Link 
-            href="/search/featured" 
+            href="/collections/bracelet" 
             className="btn-accent group inline-flex items-center gap-3 text-xl px-10 py-5"
           >
             精选推荐

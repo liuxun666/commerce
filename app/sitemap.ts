@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  const blogPromise = getBlogs(250).then((blogCategories) => {
+  const blogPromise = getBlogs(240).then((blogCategories) => {
     return blogCategories.map((blogCategory) => ({
       url: `${baseUrl}/blogs/${blogCategory.handle}`,
       lastModified: new Date('2025-09-11').toISOString().split('T')[0] || ''

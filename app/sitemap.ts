@@ -1,4 +1,4 @@
-import { getCollections, getPages, getProducts } from 'lib/shopify';
+import { getBlogs, getCollections, getPages, getProducts } from 'lib/shopify';
 import { baseUrl, validateEnvironmentVariables } from 'lib/utils';
 import { MetadataRoute } from 'next';
 
@@ -38,11 +38,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
+  const blogPromise = getBlogs(250).then((blogCategories) => {
+    return blogCategories.map((blogCategory) => ({
+      url: `${baseUrl}/blogs/${blogCategory.handle}`,
+      lastModified: new Date('2025-09-11').toISOString().split('T')[0] || ''
+    }))
+    .concat(
+      blogCategories.flatMap((blogCategory) =>
+        blogCategory.articles?.edges.map((article) => ({
+          url: `${baseUrl}/blogs/${blogCategory.handle}/${article.node.handle}`,
+          lastModified: article.node.publishedAt?.split('T')[0] || ''
+        })) || []
+      )
+    );
+  });
+
   let fetchedRoutes: Route[] = [];
 
   try {
     fetchedRoutes = (
-      await Promise.all([collectionsPromise, productsPromise, pagesPromise])
+      await Promise.all([collectionsPromise, productsPromise, pagesPromise, blogPromise])
     ).flat();
   } catch (error) {
     throw JSON.stringify(error, null, 2);

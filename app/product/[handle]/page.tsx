@@ -77,16 +77,36 @@ export default async function Product2Page(props: { params: Promise<{ handle: st
   const productJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: product.title,
-    description: product.description,
+    name: productPageData?.name || product.title,
+    description: productPageData?.description || product.description || '精选优雅且功能与美感平衡的商品详情页展示。',
     image: product.featuredImage?.url,
-    brand: { '@type': 'Brand', name: '品牌' },
+    brand: { '@type': 'Brand', name: '檀轩' },
     offers: {
       '@type': 'AggregateOffer',
+      offerCount: product.variants.length,
       availability: product.availableForSale ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
       priceCurrency: product.priceRange.minVariantPrice.currencyCode,
       highPrice: product.priceRange.maxVariantPrice.amount,
       lowPrice: product.priceRange.minVariantPrice.amount
+    },
+    review: {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: productPageData?.best_comment.star || 4.5,
+        bestRating: 5,
+        worstRating: 1
+      },
+      author: {
+        '@type': 'Person',
+        name: productPageData?.best_comment.username
+      },
+      datePublished:  product.updatedAt
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: productPageData?.review_data.average_rating || 4.9,
+      reviewCount: productPageData?.review_data.total_reviews || 0
     }
   };
 

@@ -58,7 +58,7 @@ export async function Carousel() {
                     {product.title}
                   </h3>
                   <p className="text-2xl font-bold text-slate-600 dark:text-slate-400 transition-all duration-300 group-hover:text-slate-600 dark:group-hover:text-slate-400">
-                    {product.priceRange.maxVariantPrice.amount} {product.priceRange.maxVariantPrice.currencyCode}
+                    {product.priceRange.minVariantPrice.amount} {product.priceRange.minVariantPrice.currencyCode}
                   </p>
                   
                   {/* 装饰性元素 - 增强艺术感 */}

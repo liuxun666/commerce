@@ -36,8 +36,8 @@ export function ProductDescription({ product }: { product: Product }) {
               <div className="absolute bottom-1 right-1 w-4 h-4 border-b border-r border-white/30 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <Price
-                amount={product.priceRange.maxVariantPrice.amount}
-                currencyCode={product.priceRange.maxVariantPrice.currencyCode}
+                amount={product.priceRange.minVariantPrice.amount}
+                currencyCode={product.priceRange.minVariantPrice.currencyCode}
                 className="text-xl font-bold tracking-wide"
               />
             </div>

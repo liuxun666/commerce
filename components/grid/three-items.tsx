@@ -97,7 +97,7 @@ function ThreeItemGridItem({
             {item.title}
           </h3>
           <p className={`font-bold text-slate-300 transition-all duration-300 group-hover:text-slate-200 ${size === 'full' ? 'text-2xl' : 'text-lg'}`}>
-            {item.priceRange.maxVariantPrice.amount} {item.priceRange.maxVariantPrice.currencyCode}
+            {item.priceRange.minVariantPrice.amount} {item.priceRange.minVariantPrice.currencyCode}
           </p>
           
           {/* 装饰性元素 - 增强艺术感 */}

@@ -21,7 +21,6 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { blog: blogHandle, article: articleHandle } = await params;
   const article = await getArticle(blogHandle, articleHandle);
-
   if (!article) {
     return {
       title: 'Article Not Found',

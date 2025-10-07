@@ -8,6 +8,7 @@ const articleFragment = /* GraphQL */ `
     id
     title
     handle
+    excerpt
     contentHtml
     publishedAt
     tags

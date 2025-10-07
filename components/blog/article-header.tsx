@@ -38,7 +38,7 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
         <div className="text-center space-y-8">
           {/* 面包屑导航 */}
           <nav className="flex items-center justify-center space-x-2 text-sm text-secondary">
-            <a href="/blog" className="hover:text-gray-400 transition-colors duration-200">
+            <a href="/blogs" className="hover:text-gray-400 transition-colors duration-200">
               博客
             </a>
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,7 +95,7 @@ export default function ArticleHeader({ article }: ArticleHeaderProps) {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="text-sm font-medium text-secondary">{article.author.displayName}</p>
+                  <p className="text-sm font-medium text-secondary">Bela</p>
                   <p className="text-xs text-secondary">作者</p>
                 </div>
               </div>

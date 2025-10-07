@@ -17,20 +17,19 @@ export async function Carousel() {
   return (
     <div className="w-full animate-fade-in">
       {/* 标题区域 */}
-      <div className="mb-16 text-center animate-slide-down">
-        <h2 className="mb-6 bg-gradient-to-r from-slate-600 via-slate-600 to-slate-700 bg-clip-text text-5xl font-bold text-transparent dark:from-slate-400 dark:via-slate-400 dark:to-slate-500 animate-breathe">
+      <div className="mb-10 text-center animate-slide-down">
+        <h2 className="mb-6 text-5xl font-bold text-primary font-chinese animate-breathe">
           热门臻选
         </h2>
-        <p className="text-xl text-slate-700 dark:text-slate-300 font-medium">
+        <p className="text-xl text-secondary font-medium">    
           精心甄选，品味非凡温润之美
         </p>
         <div className="mx-auto mt-8 h-0.5 w-32 bg-gradient-to-r from-transparent via-slate-500 to-transparent animate-pulse"></div>
       </div>
 
       {/* 轮播容器 */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-100/50 via-slate-50/30 to-slate-100/50 dark:from-slate-900/50 dark:via-slate-950/30 dark:to-slate-900/50 p-8">
+      <div className="relative overflow-hidden rounded-3xl bg-card p-8">
         {/* 背景装饰 */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-200/20 via-transparent to-slate-200/20 dark:from-slate-800/20 dark:to-slate-800/20"></div>
         
         <div className="flex animate-scroll space-x-8 hover:pause">
           {carouselProducts.map((product, i) => (
@@ -44,9 +43,6 @@ export async function Carousel() {
                 {/* 装饰性边框 - 增强艺术质感 */}
                 <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-br from-slate-300/50 via-transparent to-slate-300/50 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:animate-pulse dark:from-slate-600/30 dark:to-slate-600/30 z-10"></div>
                 
-                {/* 光晕效果 */}
-                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-slate-400/20 via-slate-400/20 to-slate-400/20 opacity-0 blur-xl transition-all duration-500 group-hover:opacity-100 animate-breathe"></div>
-                
                 {/* 商品图片 */}
                 <div className="relative h-56 overflow-hidden rounded-t-3xl">
                   <img
@@ -54,12 +50,6 @@ export async function Carousel() {
                     alt={product.featuredImage.altText}
                     className="h-full w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
                   />
-                  {/* 渐变遮罩 - 增强对比度 */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-800/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-                  
-                  {/* 装饰性光斑 */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-slate-400 rounded-full opacity-60 animate-pulse"></div>
-                  <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-slate-400 rounded-full opacity-40 animate-pulse" style={{ animationDelay: '1s' }}></div>
                 </div>
                 
                 {/* 商品信息 */}
@@ -82,9 +72,6 @@ export async function Carousel() {
                     匠心工艺
                   </div>
                 </div>
-                
-                {/* 悬停效果 - 增强交互感 */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-slate-800/10 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100 z-10 animate-hover-breathe"></div>
                 
                 {/* 边角装饰 */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-slate-400/60 rounded-tl-3xl opacity-0 transition-all duration-300 group-hover:opacity-100"></div>

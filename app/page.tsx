@@ -16,15 +16,18 @@ export const metadata = {
 };
 
 /**
- * 首页组件 - 展示温润工艺品的主页面
- * 包含英雄区域、特色网格、功能介绍、轮播展示等模块
- * 采用高对比度配色方案，提升视觉质感和艺术感
+ * HomePage 首页组件
+ * 用途：展示英雄区、特色网格、功能介绍与轮播等核心模块。
+ * 输入：无
+ * 输出：统一应用 bg-app 背景与模块间合理留白，减少渐变使用；与全局变量驱动的暗黑模式自动适配。
  */
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-shanfan-50 via-shanfan-100 to-fuguang-50 dark:from-yuepo-950 dark:via-yuepo-900 dark:to-shanfan-950">
+    <div className="min-h-screen bg-app">
       {/* 英雄区域 */}
-      <HeroSection />
+      <section className='py-6'>
+        <HeroSection />
+      </section>
       
       {/* 特色商品网格 */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { Article } from 'lib/shopify/types';
+import Link from 'next/link';
 
 interface RecommendedArticlesProps {
   articles: Article[];
@@ -20,10 +20,10 @@ export default function RecommendedArticles({ articles, currentArticleHandle }: 
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-light text-slate-900 dark:text-slate-100 mb-4">
+        <h2 className="text-3xl font-blod text-primary mb-4">
           相关文章推荐
         </h2>
-        <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="text-secondary max-w-2xl mx-auto">
           探索更多精彩内容，拓展您的视野
         </p>
         <div className="mt-6 flex justify-center">

@@ -16,7 +16,7 @@ export default function BlogGrid({ blogs }: BlogGridProps) {
     return (
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-4 py-2 text-sm text-slate-600 dark:text-slate-400">
+          <div className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm text-secondary">
             暂无博客内容
           </div>
         </div>
@@ -52,10 +52,10 @@ function BlogCategorySection({ blog }: BlogCategorySectionProps) {
       {/* 分类标题区域 */}
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-2">
+          <h3 className="text-2xl font-semibold text-primary mb-2">
             {blog.title}
           </h3>
-          <p className="text-slate-600 dark:text-slate-400">
+          <p className="text-secondary">
             {blog.seo?.description || `探索${blog.title}分类中的精彩文章`}
           </p>
         </div>
@@ -63,7 +63,7 @@ function BlogCategorySection({ blog }: BlogCategorySectionProps) {
         {articles.length > 0 && (
           <Link
             href={`/blogs/${blog.handle}`}
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors duration-200"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-secondary hover:text-primary bg-primary hover:bg-primary/90 rounded-lg transition-colors duration-200"
           >
             查看更多
             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,13 +86,13 @@ function BlogCategorySection({ blog }: BlogCategorySectionProps) {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-200 dark:bg-slate-700 rounded-full mb-4">
+        <div className="text-center py-12 bg-card rounded-xl border border-card-border">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4">
             <svg className="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
             </svg>
           </div>
-          <p className="text-slate-500 dark:text-slate-400">
+          <p className="text-secondary">
             该分类暂无文章
           </p>
         </div>
@@ -127,14 +127,14 @@ function ArticleCard({ article, blogHandle, index }: ArticleCardProps) {
   return (
     <Link
       href={`/blogs/${blogHandle}/${article.handle}`}
-      className="group block overflow-hidden rounded-xl bg-white dark:bg-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-700"
+      className="group block overflow-hidden rounded-xl bg-card shadow-sm hover:shadow-lg transition-all duration-300 border border-card-border"
       style={{
         animationDelay: `${index * 100}ms`
       }}
     >
       {/* 文章图片 */}
       {article.image && (
-        <div className="aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-slate-700">
+        <div className="aspect-[16/10] overflow-hidden bg-card-image">
           <img
             src={article.image.url}
             alt={article.image.altText || article.title}
@@ -147,18 +147,18 @@ function ArticleCard({ article, blogHandle, index }: ArticleCardProps) {
       {/* 文章内容 */}
       <div className="p-6">
         <div className="mb-3">
-          <h4 className="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors line-clamp-2">
+          <h4 className="text-lg font-semibold text-primary group-hover:text-primary/90 transition-colors line-clamp-2">
             {article.title}
           </h4>
         </div>
         
         {article.excerpt && (
-          <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">
+          <p className="text-secondary text-sm leading-relaxed mb-4 line-clamp-3">
             {article.excerpt}
           </p>
         )}
         
-        <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <div className="flex items-center justify-between text-xs text-secondary">
           <div className="flex items-center space-x-3">
             {article.author?.displayName && (
               <span>{article.author.displayName}</span>
@@ -167,7 +167,7 @@ function ArticleCard({ article, blogHandle, index }: ArticleCardProps) {
           </div>
           
           {article.tags && article.tags.length > 0 && (
-            <span className="bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full">
+            <span className="bg-tag px-2 py-1 rounded-full">
               {article.tags[0]}
             </span>
           )}

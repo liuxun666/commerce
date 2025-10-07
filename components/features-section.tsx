@@ -49,7 +49,7 @@ export function FeaturesSection() {
           <h2 className="text-4xl font-bold text-gradient-primary mb-6 hover-breathe">
             为什么选择我们
           </h2>
-          <p className="text-xl text-shanfan-700 dark:text-shanfan-300 max-w-3xl mx-auto font-chinese leading-relaxed animate-slide-up">
+          <p className="text-xl text-secondary max-w-3xl mx-auto font-chinese leading-relaxed animate-slide-up">
             我们不仅仅是在售卖工艺品，更是在传承一种文化，一种生活态度。
             每一件作品都是对传统工艺的致敬，对美好生活的向往。
           </p>
@@ -79,12 +79,12 @@ export function FeaturesSection() {
               </div>
 
               {/* 标题 */}
-              <h3 className="text-xl font-bold text-shanfan-800 dark:text-shanfan-200 mb-4 group-hover:text-gradient-primary transition-all duration-300 hover-heartbeat">
+              <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-gradient-primary transition-all duration-300 hover-heartbeat">
                 {feature.title}
               </h3>
 
               {/* 描述 */}
-              <p className="text-shanfan-600 dark:text-shanfan-400 leading-relaxed font-chinese group-hover:text-shanfan-700 dark:group-hover:text-shanfan-300 transition-all duration-300">
+              <p className="text-secondary leading-relaxed font-chinese group-hover:text-shanfan-700 dark:group-hover:text-shanfan-300 transition-all duration-300">
                 {feature.description}
               </p>
 
@@ -96,17 +96,11 @@ export function FeaturesSection() {
 
         {/* 底部装饰文字 */}
         <div className="text-center mt-16 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-          <div className="inline-block px-8 py-4 bg-shanfan-50/80 dark:bg-yuepo-900/80 backdrop-blur-md rounded-full border border-fuguang-200/50 dark:border-yuepo-700/50 shadow-elegant hover:shadow-glow-fuguang transition-all duration-500 hover-breathe cursor-pointer">
-            <p className="text-shanfan-600 dark:text-shanfan-400 font-chinese tracking-widest text-gradient-secondary">
+          <div className="inline-block px-8 py-4 bg-surface/80 backdrop-blur-md rounded-full border border-fuguang-200/50 dark:border-yuepo-700/50 shadow-elegant hover:shadow-glow-fuguang transition-all duration-500 hover-breathe cursor-pointer">
+            <p className="text-secondary font-chinese tracking-widest text-gradient-secondary">
               「 以器载道，以美化人 」
             </p>
           </div>
-        </div>
-
-        {/* 装饰性几何图形 */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-fuguang-200/20 to-chizhi-200/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-br from-chizhi-200/20 to-fuguang-200/20 rounded-full blur-2xl animate-gentle-bounce" />
         </div>
       </div>
     </section>

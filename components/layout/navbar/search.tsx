@@ -21,14 +21,11 @@ export default function Search() {
           placeholder="搜索商品..."
           autoComplete="off"
           defaultValue={searchParams?.get('q') || ''}
-          className="w-full rounded-2xl border-2 border-fuguang-200/60 dark:border-fuguang-700/60 bg-shanfan-50/80 dark:bg-yuepo-900/80 backdrop-blur-sm px-5 py-3 pr-12 text-sm text-yuepo-800 dark:text-shanfan-200 placeholder:text-yuepo-500 dark:placeholder:text-yuepo-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-chizhi-400/50 focus:border-chizhi-400 dark:focus:border-chizhi-500 hover:border-fuguang-300 dark:hover:border-fuguang-600 hover:bg-shanfan-100/90 dark:hover:bg-yuepo-800/90"
+          className="w-full rounded-2xl border-2 border-primary bg-input px-5 py-3 pr-12 text-sm text-primary placeholder:text-muted focus:outline-none focus:border-chizhi-400" 
         />
         <div className="absolute right-0 top-0 mr-4 flex h-full items-center pointer-events-none">
-          <MagnifyingGlassIcon className="h-5 w-5 text-yuepo-600 dark:text-yuepo-400 group-hover:text-chizhi-500 dark:group-hover:text-chizhi-400 transition-colors duration-300" />
+          <MagnifyingGlassIcon className="h-5 w-5 text-yuepo-600 dark:text-yuepo-400 group-hover:text-chizhi-500" />
         </div>
-        
-        {/* 装饰性边框光晕 */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-fuguang-400/20 via-chizhi-400/10 to-fuguang-400/20 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10 blur-sm" />
       </div>
     </Form>
   );

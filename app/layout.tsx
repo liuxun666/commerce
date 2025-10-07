@@ -23,15 +23,17 @@ export const metadata = {
 };
 
 /**
- * 根布局组件 - 应用程序的主要布局结构
- * 包含主题提供者、导航栏、购物车上下文等全局组件
+ * RootLayout 根布局组件
+ * 用途：提供全局主题（class 模式）、购物车上下文、导航与主内容区域，并应用统一样式基线。
+ * 输入：children（页面内容）
+ * 输出：页面框架，应用 bg-app 与 text-primary 作为全局基色，去除 dark: 前缀依赖，使用 CSS 变量驱动的类在 light/dark 下自动适配。
  */
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const cartPromise = getCart();
 
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className="bg-slate-50 text-slate-900 antialiased dark:bg-slate-900 dark:text-slate-100">
+      <body className="min-h-screen bg-app text-primary antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

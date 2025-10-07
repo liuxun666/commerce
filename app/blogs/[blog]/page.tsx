@@ -67,7 +67,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-shanfan-50 via-shanfan-100 to-fuguang-50 dark:from-yuepo-950 dark:via-yuepo-900 dark:to-shanfan-950">
+    <div className="min-h-screen bg-app">
       {/* 博客头部 */}
       <BlogHeader blog={blog} />
       

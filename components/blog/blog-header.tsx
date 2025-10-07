@@ -14,10 +14,6 @@ export default function BlogHeader({ blog }: BlogHeaderProps) {
     <div className="relative overflow-hidden">
       {/* 背景装饰元素 */}
       <div className="absolute inset-0">
-        {/* 渐变光斑 */}
-        <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-slate-200/20 to-slate-300/10 dark:from-slate-700/20 dark:to-slate-600/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-tl from-slate-300/15 to-slate-200/20 dark:from-slate-600/15 dark:to-slate-700/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        
         {/* 几何装饰 */}
         <div className="absolute top-16 left-16 w-1.5 h-1.5 bg-slate-400 dark:bg-slate-500 rounded-full opacity-60"></div>
         <div className="absolute bottom-20 right-20 w-1 h-1 bg-slate-500 dark:bg-slate-400 rounded-full opacity-40"></div>
@@ -28,17 +24,17 @@ export default function BlogHeader({ blog }: BlogHeaderProps) {
       <div className="relative mx-auto max-w-4xl px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
         <div className="text-center space-y-8">
           {/* 面包屑导航 */}
-          <nav className="flex items-center justify-center space-x-2 text-sm text-slate-500 dark:text-slate-400">
-            <a href="/blogs" className="hover:text-slate-700 dark:hover:text-slate-300 transition-colors duration-200">
+          <nav className="flex items-center justify-center space-x-2 text-sm text-secondary dark:text-secondary">
+            <a href="/blogs" className="hover:text-primary dark:hover:text-primary transition-colors duration-200">
               博客
             </a>
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
             </svg>
-            <span className="font-bold text-slate-700 dark:text-slate-300">{blog.title}</span>
+            <span className="font-bold text-secondary">{blog.title}</span>
           </nav>
           {/* 标题 */}
-          <h1 className="text-5xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl">
+          <h1 className="text-5xl font-bold tracking-tight text-primary dark:text-primary sm:text-6xl lg:text-7xl">
             {blog.title}
           </h1>
           
@@ -51,7 +47,7 @@ export default function BlogHeader({ blog }: BlogHeaderProps) {
 
           {/* 描述文字 */}
           {blog.seo?.description && (
-            <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+            <p className="mx-auto max-w-2xl text-lg leading-8 text-secondary dark:text-secondary">  
               {blog.seo.description}
             </p>
           )}

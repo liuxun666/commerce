@@ -31,11 +31,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${article.title} | ${article.blog?.title || 'Blog'}`,
-    description: article.excerpt || article.seo?.description || '探索生活美学与品质生活',
+    description: article.excerpt || article.seo?.description || '探索传统国学风水与品质生活',
     openGraph: {
       type: 'article',
       title: article.title,
-      description: article.excerpt || article.seo?.description || '探索生活美学与品质生活',
+      description: article.excerpt || article.seo?.description || '探索传统国学风水与品质生活',
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       authors: [article.author.displayName],
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: article.title,
-      description: article.excerpt || article.seo?.description || '探索生活美学与品质生活',
+      description: article.excerpt || article.seo?.description || '探索传统国学风水与品质生活',
       images: article.image ? [article.image.url] : undefined,
     }
   };
@@ -87,18 +87,18 @@ export default async function ArticleDetailPage({ params }: Props) {
   // 过滤掉当前文章
   const recommendedArticles = recommendedArticlesData.articles.filter(
     (a) => a.handle !== articleHandle
-  ).slice(0, 3);
+  ).slice(0, 4);
 
   // 限制推荐商品数量
-  const limitedRecommendedProducts = recommendedProducts.slice(0, 4);
+  const limitedRecommendedProducts = recommendedProducts.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-shanfan-50 via-shanfan-100 to-fuguang-50 dark:from-yuepo-950 dark:via-yuepo-900 dark:to-shanfan-950">
+    <div className="min-h-screen bg-app">
       {/* 文章头部 */}
       <ArticleHeader article={article} />
       
       {/* 文章内容区域 */}
-      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
         <article className="prose prose-slate dark:prose-invert max-w-none">
           <Suspense fallback={<ArticleContentSkeleton />}>
             <ArticleContent article={article} />
@@ -106,7 +106,7 @@ export default async function ArticleDetailPage({ params }: Props) {
         </article>
 
         {/* 分享按钮 */}
-        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
+        <div className="mt-6 pt-8 border-t border-slate-200 dark:border-slate-700">
           <ShareButtons article={article} />
         </div>
 

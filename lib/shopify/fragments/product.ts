@@ -60,6 +60,11 @@ const productFragment = /* GraphQL */ `
     }
     tags
     updatedAt
+    metafields(identifiers: [{namespace: "custom", key: "product_page_data"}]) {
+      key
+      value
+      type
+    }
   }
   ${imageFragment}
   ${seoFragment}

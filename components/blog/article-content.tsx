@@ -11,7 +11,7 @@ interface ArticleContentProps {
  */
 export default function ArticleContent({ article }: ArticleContentProps) {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="mx-auto px-4 py-4 sm:px-6 lg:px-8">
       {/* 内容容器 */}
       <div className="relative">
         {/* 背景装饰 */}
@@ -206,7 +206,7 @@ export default function ArticleContent({ article }: ArticleContentProps) {
         </article>
 
         {/* 文章底部装饰 */}
-        <div className="mt-16 flex justify-center">
+        <div className="mt-8 flex justify-center">
           <div className="flex items-center space-x-4">
             <div className="h-px w-20 bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-600 to-slate-300 dark:to-slate-600"></div>
             <div className="flex space-x-1">

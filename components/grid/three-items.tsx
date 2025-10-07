@@ -19,18 +19,18 @@ export async function ThreeItemGrid() {
   return (
     <section className="mx-auto max-w-screen-2xl px-4 pb-4 animate-fade-in">
       {/* 标题区域 - 独立布局，避免被商品图片遮挡 */}
-      <div className="mb-16 text-center animate-slide-down">
-        <h2 className="mb-6 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-clip-text text-5xl font-bold text-transparent dark:from-slate-400 dark:via-slate-300 dark:to-slate-400 animate-breathe">
+      <div className="mb-10 text-center animate-slide-down">
+        <h2 className="mb-6 text-2xl md:text-4xl font-medium animate-breathe">
           匠心臻选
         </h2>
-        <p className="text-xl text-slate-600 dark:text-slate-400 font-medium">
+        <p className="text-xl text-spring-500 font-medium">
           温润工艺，传承千年匠心之美
         </p>
         <div className="mx-auto mt-8 h-0.5 w-32 bg-gradient-to-r from-transparent via-slate-400 to-transparent animate-pulse"></div>
       </div>
 
       {/* 商品网格 - 调整布局确保不遮挡标题 */}
-      <div className="grid gap-6 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-300px)]">
+      <div className="grid gap-6 md:grid-cols-6 md:grid-rows-2 lg:max-h-[calc(100vh-200px)]">
         {/* 第一个商品 - 大尺寸 */}
         <ThreeItemGridItem size="full" item={firstProduct} priority={true} />
         

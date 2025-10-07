@@ -10,16 +10,16 @@ import { Suspense } from 'react';
  */
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Blog | 探索生活美学与品质生活',
+    title: 'Blog | 探索传统国学风水与品质生活',
     description: '发现生活中的美好瞬间，分享品质生活理念，探索东方美学与现代设计的完美融合。',
     openGraph: {
       type: 'website',
-      title: 'Blog | 探索生活美学与品质生活',
+      title: 'Blog | 探索传统国学风水与品质生活',
       description: '发现生活中的美好瞬间，分享品质生活理念，探索东方美学与现代设计的完美融合。',
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Blog | 探索生活美学与品质生活',
+      title: 'Blog | 探索传统国学风水与品质生活',
       description: '发现生活中的美好瞬间，分享品质生活理念，探索东方美学与现代设计的完美融合。',
     }
   };
@@ -38,7 +38,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-shanfan-50 via-shanfan-100 to-fuguang-50 dark:from-yuepo-950 dark:via-yuepo-900 dark:to-shanfan-950">
+    <div className="min-h-screen bg-app">
       {/* Hero区域 */}
       <BlogHero />
       {/* 博客网格 */}

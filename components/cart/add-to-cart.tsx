@@ -3,11 +3,11 @@
 import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import { addItem } from 'components/cart/actions';
+import LoadingDots from 'components/loading-dots';
 import { useProduct } from 'components/product/product-context';
 import { Product, ProductVariant } from 'lib/shopify/types';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
-import LoadingDots from 'components/loading-dots';
 import { useCart } from './cart-context';
 
 /**
@@ -25,8 +25,8 @@ function SubmitButton({
   const buttonClasses = clsx(
     'group relative w-full overflow-hidden rounded-2xl px-8 py-4 font-semibold transition-all duration-500 ease-out',
     {
-      // 可用状态 - 优雅的深色渐变
-      'bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 text-white shadow-xl shadow-slate-800/30 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-800/40 active:scale-[0.98] dark:from-slate-600 dark:via-slate-500 dark:to-slate-600 dark:shadow-slate-900/50':
+      // 可用状态 - 优雅的深色渐变（移除缩放效果）
+      'btn-primary text-white shadow-xl shadow-slate-800/30 hover:shadow-2xl hover:shadow-slate-800/40':
         availableForSale && selectedVariantId,
       // 不可用状态 - 柔和的灰色
       'cursor-not-allowed bg-gradient-to-r from-slate-300 to-slate-400 text-slate-600 shadow-lg shadow-slate-300/20 dark:from-slate-700 dark:to-slate-800 dark:text-slate-400 dark:shadow-slate-900/30':
@@ -74,7 +74,7 @@ function SubmitButton({
         ) : (
           <>
             {!disabledButton && (
-              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-white/20 transition-all duration-300 group-hover:bg-white/30 group-hover:scale-110">
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-white/20 transition-all duration-300 group-hover:bg-white/30">
                 <PlusIcon className="h-3 w-3 transition-transform duration-300 group-hover:rotate-90" />
               </div>
             )}
@@ -91,7 +91,7 @@ function SubmitButton({
 
       {/* 涟漪效果 */}
       {!disabledButton && (
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-slate-600/0 via-slate-500/10 to-slate-600/0 opacity-0 transition-opacity duration-300 group-active:opacity-100"></div>
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-slate-600/0 via-slate-500/10 to-slate-600/0 opacity-0 transition-opacity duration-300"></div>
       )}
     </button>
   );

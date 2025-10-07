@@ -25,16 +25,16 @@ export default function Footer() {
                 <span className="text-shanfan-50 font-bold text-xl font-chinese">温</span>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-shanfan-800 dark:text-shanfan-200 font-chinese">
+                <h3 className="text-2xl font-bold text-primary font-chinese">
                   {copyrightName}
                 </h3>
-                <p className="text-base text-shanfan-600 dark:text-shanfan-400 font-chinese">
+                <p className="text-base text-secondary font-chinese">
                   传承千年匠心之美
                 </p>
               </div>
             </div>
             
-            <p className="text-lg text-shanfan-700 dark:text-shanfan-300 leading-relaxed max-w-md font-chinese">
+            <p className="text-lg text-secondary leading-relaxed max-w-md font-chinese">
               每一件作品都承载着深厚的文化底蕴和艺术价值，在现代生活中重拾传统匠心，让品质与美学完美融合。
             </p>
             
@@ -42,36 +42,36 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-fuguang-400 rounded-full"></div>
-                <span className="text-shanfan-600 dark:text-shanfan-400">客服热线：400-888-9999</span>
+                <span className="text-secondary">客服热线：400-888-9999</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-chizhi-400 rounded-full"></div>
-                <span className="text-shanfan-600 dark:text-shanfan-400">邮箱：service@wenrungongyi.com</span>
+                <span className="text-secondary">邮箱：service@wenrungongyi.com</span>
               </div>
             </div>
           </div>
           
           {/* 快速链接 */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-shanfan-800 dark:text-shanfan-200 font-chinese">
+            <h4 className="text-lg font-semibold text-primary font-chinese">
               快速导航
             </h4>
             <nav className="space-y-4">
               <Link 
                 href="/search" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
+                className="block text-secondary hover:text-primary font-medium"
               >
                 精选推荐
               </Link>
               <Link 
                 href="/about" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
+                className="block text-secondary hover:text-primary font-medium"
               >
                 品牌故事
               </Link>
               <Link 
                 href="/contact" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
+                className="block text-secondary hover:text-primary font-medium"
               >
                 联系我们
               </Link>
@@ -80,25 +80,25 @@ export default function Footer() {
           
           {/* 服务支持 */}
           <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-shanfan-800 dark:text-shanfan-200 font-chinese">
+            <h4 className="text-lg font-semibold text-primary font-chinese">
               服务支持
             </h4>
             <nav className="space-y-4">
               <Link 
                 href="/policies/terms-of-service" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
+                className="block text-secondary hover:text-primary font-medium"
               >
                 服务条款
               </Link>
               <Link 
                 href="/policies/refund-policy" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
+                className="block text-secondary hover:text-primary font-medium"
               >
                 退换政策
               </Link>
               <Link 
                 href="/policies/privacy-policy" 
-                className="block text-shanfan-600 dark:text-shanfan-400 hover:text-fuguang-700 dark:hover:text-fuguang-300 transition-colors duration-300 font-medium"
+                className="block text-secondary hover:text-primary font-medium"
               >
                 隐私政策
               </Link>
@@ -111,9 +111,9 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* 版权信息 */}
             <div className="text-center md:text-left">
-              <p className="text-shanfan-600 dark:text-shanfan-400 text-base">
+              <p className="text-secondary text-base">
                 © {copyrightDate === currentYear ? currentYear : `${copyrightDate}-${currentYear}`}{' '}
-                <span className="font-semibold text-shanfan-700 dark:text-shanfan-300">{copyrightName}</span>
+                <span className="font-semibold">{copyrightName}</span>
                 {'. '}
                 <span className="font-chinese">匠心传承，品质保证</span>
               </p>

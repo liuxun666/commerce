@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { Article } from 'lib/shopify/types';
+import { useState } from 'react';
 
 interface ShareButtonsProps {
   article: Article;
@@ -104,18 +104,14 @@ export default function ShareButtons({ article }: ShareButtonsProps) {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900 p-8 shadow-sm border border-slate-200/50 dark:border-slate-700/50">
-        {/* 背景装饰 */}
-        <div className="absolute top-4 right-4 w-20 h-20 bg-gradient-to-br from-slate-200/20 to-slate-300/10 dark:from-slate-700/20 dark:to-slate-600/10 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-4 left-4 w-16 h-16 bg-gradient-to-tl from-slate-300/15 to-slate-200/20 dark:from-slate-600/15 dark:to-slate-700/20 rounded-full blur-xl"></div>
-
+      <div className="relative overflow-hidden rounded-2xl bg-card/95 p-8 shadow border border-card">
         <div className="relative text-center">
           {/* 标题 */}
           <div className="mb-8">
-            <h3 className="text-2xl font-light text-slate-900 dark:text-slate-100 mb-3">
+            <h3 className="text-2xl font-blod text-primary mb-3">
               分享这篇文章
             </h3>
-            <p className="text-slate-600 dark:text-slate-400">
+            <p className="text-secondary">
               将精彩内容分享给更多朋友
             </p>
             <div className="mt-4 flex justify-center">
@@ -129,7 +125,7 @@ export default function ShareButtons({ article }: ShareButtonsProps) {
               <button
                 key={option.name}
                 onClick={option.action}
-                className={`group flex items-center space-x-3 px-6 py-3 rounded-xl bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-400 transition-all duration-300 ${option.color} hover:shadow-md hover:scale-105 hover:border-transparent`}
+                className={`group flex items-center space-x-3 px-6 py-3 rounded-xl bg-card border border-primary text-primary transition-all duration-300 ${option.color} hover:shadow-md hover:scale-105 hover:border-transparent`}
                 aria-label={`分享到${option.name}`}
               >
                 <span className="transition-transform duration-300 group-hover:scale-110">
@@ -142,7 +138,7 @@ export default function ShareButtons({ article }: ShareButtonsProps) {
 
           {/* 复制链接 */}
           <div className="border-t border-slate-200 dark:border-slate-700 pt-6">
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+            <p className="text-sm text-secondary mb-4"> 
               或复制链接直接分享
             </p>
             <div className="flex items-center justify-center space-x-3">
@@ -152,7 +148,7 @@ export default function ShareButtons({ article }: ShareButtonsProps) {
                     type="text"
                     value={getShareUrl()}
                     readOnly
-                    className="w-full px-4 py-3 pr-12 text-sm bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 focus:border-transparent"
+                    className="w-full px-4 py-3 pr-12 text-sm bg-input border border-slate-200 dark:border-slate-600 rounded-lg text-secondary focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 focus:border-transparent"
                   />
                   <button
                     onClick={copyToClipboard}

@@ -28,7 +28,7 @@ export default function ContactPage() {
           <h1 className="text-5xl md:text-6xl font-bold text-gradient-primary mb-8">
             联系我们
           </h1>
-          <p className="text-xl text-shanfan-700 dark:text-shanfan-300 leading-relaxed font-chinese mb-8">
+          <p className="text-xl text-secondary leading-relaxed font-chinese mb-8">
             我们期待与您交流，为您提供最优质的服务
           </p>
           
@@ -50,61 +50,61 @@ export default function ContactPage() {
             <div className="space-y-12">
               <div>
                 <h2 className="text-3xl font-bold text-gradient-primary mb-8">联系信息</h2>
-                <p className="text-lg text-shanfan-600 dark:text-shanfan-400 font-chinese leading-relaxed mb-8">
+                <p className="text-lg text-secondary font-chinese leading-relaxed mb-8">
                   我们致力于传承千年匠心工艺，为每一位客户提供专业的咨询服务。无论您对我们的产品有任何疑问，或需要定制服务，都欢迎与我们联系。
                 </p>
               </div>
 
               {/* 联系方式卡片 */}
               <div className="space-y-6">
-                <div className="bg-white/80 dark:bg-yuepo-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
+                <div className="bg-surface rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-fuguang-100 dark:bg-fuguang-900/50 rounded-xl">
+                    <div className="p-3 bg-card rounded-xl">
                       <PhoneIcon className="w-6 h-6 text-fuguang-600 dark:text-fuguang-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-shanfan-800 dark:text-shanfan-200 mb-2">客服热线</h3>
-                      <p className="text-shanfan-600 dark:text-shanfan-400">400-888-0000</p>
-                      <p className="text-sm text-yuepo-500 dark:text-yuepo-400 mt-1">周一至周日 9:00-21:00</p>
+                      <h3 className="text-lg font-semibold text-primary mb-2">客服热线</h3>
+                      <p className="text-secondary">400-888-0000</p>
+                      <p className="text-sm text-secondary mt-1">周一至周日 9:00-21:00</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/80 dark:bg-yuepo-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
+                <div className="bg-surface rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-chizhi-100 dark:bg-chizhi-900/50 rounded-xl">
+                    <div className="p-3 bg-card rounded-xl">
                       <EnvelopeIcon className="w-6 h-6 text-chizhi-600 dark:text-chizhi-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-shanfan-800 dark:text-shanfan-200 mb-2">邮箱地址</h3>
-                      <p className="text-shanfan-600 dark:text-shanfan-400">contact@tanxuan.com</p>
-                      <p className="text-sm text-yuepo-500 dark:text-yuepo-400 mt-1">我们会在24小时内回复您的邮件</p>
+                      <h3 className="text-lg font-semibold text-primary mb-2">邮箱地址</h3>
+                      <p className="text-secondary">contact@tanxuan.com</p>
+                      <p className="text-sm text-secondary mt-1">我们会在24小时内回复您的邮件</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/80 dark:bg-yuepo-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
+                <div className="bg-surface rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-shanfan-100 dark:bg-shanfan-900/50 rounded-xl">
+                    <div className="p-3 bg-card rounded-xl">
                       <MapPinIcon className="w-6 h-6 text-shanfan-600 dark:text-shanfan-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-shanfan-800 dark:text-shanfan-200 mb-2">公司地址</h3>
-                      <p className="text-shanfan-600 dark:text-shanfan-400">北京市朝阳区工体北路8号</p>
-                      <p className="text-sm text-yuepo-500 dark:text-yuepo-400 mt-1">欢迎预约参观我们的展厅</p>
+                      <h3 className="text-lg font-semibold text-primary mb-2">公司地址</h3>
+                      <p className="text-secondary">北京市朝阳区工体北路8号</p>
+                      <p className="text-sm text-secondary mt-1">欢迎预约参观我们的展厅</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white/80 dark:bg-yuepo-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
+                <div className="bg-surface rounded-2xl p-6 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/50 dark:border-yuepo-700/50">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-yuepo-100 dark:bg-yuepo-900/50 rounded-xl">
+                    <div className="p-3 bg-card rounded-xl">  
                       <ClockIcon className="w-6 h-6 text-yuepo-600 dark:text-yuepo-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-shanfan-800 dark:text-shanfan-200 mb-2">营业时间</h3>
-                      <p className="text-shanfan-600 dark:text-shanfan-400">周一至周日 10:00-19:00</p>
-                      <p className="text-sm text-yuepo-500 dark:text-yuepo-400 mt-1">节假日正常营业</p>
+                      <h3 className="text-lg font-semibold text-primary mb-2">营业时间</h3>
+                      <p className="text-secondary">周一至周日 10:00-19:00</p>
+                      <p className="text-sm text-secondary mt-1">节假日正常营业</p>
                     </div>
                   </div>
                 </div>
@@ -112,61 +112,61 @@ export default function ContactPage() {
             </div>
 
             {/* 联系表单 */}
-            <div className="bg-white/80 dark:bg-yuepo-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-elegant border border-shanfan-200/50 dark:border-yuepo-700/50">
+            <div className="bg-surface rounded-3xl p-8 shadow-elegant border border-shanfan-200/50 dark:border-yuepo-700/50">
               <h2 className="text-3xl font-bold text-gradient-primary mb-8">在线咨询</h2>
               
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-shanfan-700 dark:text-shanfan-300 mb-2">
-                      姓名 *
+                    <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
+                      姓名 <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-white/50 dark:bg-yuepo-900/50 text-shanfan-800 dark:text-shanfan-200 placeholder-yuepo-400 focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-input focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
                       placeholder="请输入您的姓名"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-shanfan-700 dark:text-shanfan-300 mb-2">
+                    <label htmlFor="phone" className="block text-sm font-medium text-primary mb-2">
                       联系电话
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-white/50 dark:bg-yuepo-900/50 text-shanfan-800 dark:text-shanfan-200 placeholder-yuepo-400 focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-input focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
                       placeholder="请输入您的联系电话"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-shanfan-700 dark:text-shanfan-300 mb-2">
-                    邮箱地址 *
+                  <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
+                    邮箱地址 <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-white/50 dark:bg-yuepo-900/50 text-shanfan-800 dark:text-shanfan-200 placeholder-yuepo-400 focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-input focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
                     placeholder="请输入您的邮箱地址"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-shanfan-700 dark:text-shanfan-300 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-primary mb-2">
                     咨询主题
                   </label>
                   <select
                     id="subject"
                     name="subject"
-                    className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-white/50 dark:bg-yuepo-900/50 text-shanfan-800 dark:text-shanfan-200 focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-input focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200"
                   >
                     <option value="">请选择咨询主题</option>
                     <option value="product">产品咨询</option>
@@ -178,15 +178,15 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-shanfan-700 dark:text-shanfan-300 mb-2">
-                    详细描述 *
+                  <label htmlFor="message" className="block text-sm font-medium text-primary mb-2">
+                    详细描述 <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={6}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-white/50 dark:bg-yuepo-900/50 text-shanfan-800 dark:text-shanfan-200 placeholder-yuepo-400 focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-shanfan-200 dark:border-yuepo-600 bg-input focus:ring-2 focus:ring-fuguang-400 focus:border-transparent transition-all duration-200 resize-none"
                     placeholder="请详细描述您的需求或问题，我们会尽快为您解答..."
                   />
                 </div>
@@ -207,44 +207,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* 服务承诺 */}
-      <section className="py-16 ">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gradient-primary mb-12">服务承诺</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white/60 dark:bg-yuepo-800/60 backdrop-blur-sm rounded-2xl p-8 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/30 dark:border-yuepo-700/30">
-              <div className="w-16 h-16 bg-fuguang-100 dark:bg-fuguang-900/50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <ClockIcon className="w-8 h-8 text-fuguang-600 dark:text-fuguang-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-shanfan-800 dark:text-shanfan-200 mb-4">快速响应</h3>
-              <p className="text-shanfan-600 dark:text-shanfan-400 font-chinese leading-relaxed">
-                24小时内回复您的咨询，工作日当天处理紧急问题
-              </p>
-            </div>
-
-            <div className="bg-white/60 dark:bg-yuepo-800/60 backdrop-blur-sm rounded-2xl p-8 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/30 dark:border-yuepo-700/30">
-              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <EnvelopeIcon className="w-8 h-8 text-chizhi-600 dark:text-chizhi-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-shanfan-800 dark:text-shanfan-200 mb-4">专业服务</h3>
-              <p className="text-shanfan-600 dark:text-shanfan-400 font-chinese leading-relaxed">
-                专业的客服团队，为您提供详细的产品介绍和购买建议
-              </p>
-            </div>
-
-            <div className="bg-white/60 dark:bg-yuepo-800/60 backdrop-blur-sm rounded-2xl p-8 shadow-warm hover:shadow-elegant transition-all duration-300 border border-shanfan-200/30 dark:border-yuepo-700/30">
-              <div className="w-16 h-16 bg-chizhi-100 dark:bg-chizhi-900/50 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <PhoneIcon className="w-8 h-8 text-shanfan-600 dark:text-shanfan-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-shanfan-800 dark:text-shanfan-200 mb-4">贴心售后</h3>
-              <p className="text-shanfan-600 dark:text-shanfan-400 font-chinese leading-relaxed">
-                完善的售后服务体系，让您购买无忧，使用放心
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

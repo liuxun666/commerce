@@ -26,12 +26,12 @@ export function GridTileImage({
     <div
       className={clsx(
         // 基础容器样式：圆角、细边框、半透明背景、阴影与过渡
-        'group relative flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border bg-white/80 backdrop-blur-sm dark:bg-black/70 transition-all duration-300 shadow-sm hover:shadow-lg hover:scale-[1.02] hover:border-neutral-400 dark:hover:border-neutral-700',
+        'group relative flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border bg-card backdrop-blur-sm  transition-all duration-300 shadow-sm hover:shadow-lg hover:scale-[1.02] hover:border-card dark:hover:border-card',
         {
           // 选中态：更强的中性色边框
-          'border-2 border-neutral-600 dark:border-neutral-500': active,
+          'border-2 border-primary dark:border-card': active,
           // 默认态：中性边框
-          'border-neutral-200 dark:border-neutral-800': !active,
+          'border-card dark:border-card': !active,
           // 当存在标签时，使容器成为定位上下文
           relative: label
         }

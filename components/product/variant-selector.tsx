@@ -23,10 +23,9 @@ export function VariantSelector({
 }) {
   const { state, updateOption } = useProduct();
   const updateURL = useUpdateURL();
-  const hasNoOptionsOrJustOneOption =
-    !options.length || (options.length === 1 && options[0]?.values.length === 1);
-
-  if (hasNoOptionsOrJustOneOption) {
+  // 判断是否无可选项（当商品没有 options 时，仍展示一个默认选项）
+  const hasNoOptions = options.length === 0;
+  if (hasNoOptions) {
     return null;
   }
 
@@ -47,7 +46,7 @@ export function VariantSelector({
             {/* 选项标题 */}
             <dt className="flex items-center space-x-3">
               <div className="w-1 h-5 bg-chizhi-400 dark:bg-chizhi-500 rounded-full animate-pulse"></div>
-              <span className="text-lg font-bold text-shanfan-700 dark:text-shanfan-300 tracking-wide">
+              <span className="text-lg font-bold text-primary tracking-wide">
                 {option.name}
               </span>
             </dt>

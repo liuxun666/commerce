@@ -17,7 +17,7 @@ export default function ArticleGrid({ articles, blogHandle }: ArticleGridProps) 
     return (
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-800 px-6 py-3 text-sm text-slate-600 dark:text-slate-400">
+          <div className="inline-flex items-center rounded-full px-6 py-3 text-sm text-slate-600 dark:text-slate-400">
             <svg className="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
@@ -32,10 +32,10 @@ export default function ArticleGrid({ articles, blogHandle }: ArticleGridProps) 
     <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
       {/* 标题区域 */}
       <div className="mb-16 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
           最新文章
         </h2>
-        <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
+        <p className="mt-4 text-lg text-secondary">
           探索精彩内容，发现生活美学
         </p>
         <div className="mt-8 flex justify-center">

@@ -19,7 +19,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="h-10 w-20 rounded-full bg-slate-200 dark:bg-slate-700 animate-pulse" />
+      <div className="h-10 w-20 rounded-full animate-pulse" />
     );
   }
 
@@ -33,7 +33,7 @@ export default function ThemeToggle() {
     >
       {/* 滑动背景 */}
       <div
-        className={`absolute inset-1 rounded-full bg-gradient-to-r transition-all duration-300 ${
+        className={`absolute inset-0.5 rounded-full bg-gradient-to-r transition-all duration-300 ${
           isDark
             ? 'translate-x-0 from-slate-800 to-slate-900 shadow-lg'
             : 'translate-x-0 from-white to-slate-50 shadow-md'

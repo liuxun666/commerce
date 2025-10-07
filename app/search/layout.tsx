@@ -15,7 +15,7 @@ export default function SearchLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-shanfan-50 via-shanfan-100 to-fuguang-50 dark:from-yuepo-950 dark:via-yuepo-900 dark:to-shanfan-950">
+    <div className="min-h-screen bg-app">
       <div className="mx-auto flex max-w-(--breakpoint-2xl) flex-col gap-8 px-4 pb-4 md:flex-row min-h-screen animate-fade-in">
         {/* 左侧分类导航 */}
         <div className="pt-10 order-first w-full flex-none md:max-w-[125px] animate-slide-up">

@@ -18,11 +18,11 @@ export async function generateMetadata(props: {
   if (!collection) return notFound();
 
   return {
-    title: `${collection.title} - 温润工艺传统摆件`,
+    title: `${collection.title} - 传统风水服务`,
     description: collection.seo?.description || collection.description || `精选${collection.title}系列传统摆件，承载东方文化底蕴，为您的生活空间增添雅致韵味。`,
-    keywords: `${collection.title},温润工艺,传统工艺,文化摆件,${collection.title}装饰`,
+    keywords: `${collection.title},传统风水,服务,传统工艺,文化摆件,${collection.title}装饰`,
     openGraph: {
-      title: `${collection.title} - 温润工艺`,
+      title: `${collection.title} - 传统风水服务`,
       description: collection.seo?.description || `发现${collection.title}系列的精美传统摆件`,
       type: 'website'
     }
@@ -48,15 +48,15 @@ export default async function CategoryPage(props: {
   if (!collection) return notFound();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-shanfan-50 via-shanfan-100 to-fuguang-50 dark:from-yuepo-950 dark:via-yuepo-900 dark:to-shanfan-950 animate-fade-in">
+    <div className="min-h-screen animate-fade-in">
       {/* 品类标题区域 */}
       <section className="py-10 animate-slide-down">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-yuepo-900 dark:text-shanfan-100 mb-8 animate-breathe">
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-8 animate-breathe">
             {collection.title}
           </h1>
           {collection.description && (
-            <p className="text-xl text-yuepo-700 dark:text-yuepo-300 max-w-4xl mx-auto leading-relaxed font-medium animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl text-secondary max-w-4xl mx-auto leading-relaxed font-medium animate-slide-up" style={{ animationDelay: '0.2s' }}>
               {collection.description}
             </p>
           )}

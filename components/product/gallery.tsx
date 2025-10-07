@@ -40,7 +40,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
 
         {/* 图片导航控制器 */}
         {images.length > 1 ? (
-          <div className="absolute bottom-[15%] flex w-full justify-center animate-slide-up">
+          <div className="absolute bottom-[5%] flex w-full justify-center animate-slide-up">
             <div className="mx-auto flex h-12 items-center rounded-2xl border border-fuguang-200/60 dark:border-fuguang-700/60 bg-gradient-to-r from-shanfan-100/90 via-fuguang-100/80 to-shanfan-100/90 dark:from-yuepo-800/90 dark:via-shanfan-900/80 dark:to-yuepo-800/90 text-shanfan-600 dark:text-shanfan-400 backdrop-blur-md shadow-lg">
               <button
                 formAction={() => {
@@ -86,7 +86,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
 
       {/* 缩略图导航 */}
       {images.length > 1 ? (
-        <ul className="my-12 flex items-center flex-wrap justify-begin gap-4 overflow-auto py-2 lg:mb-0 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <ul className="my-12 pl-2 flex items-center flex-wrap justify-begin gap-4 overflow-auto py-2 lg:mb-0 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           {images.map((image, index) => {
             const isActive = index === imageIndex;
 
@@ -98,13 +98,13 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
                     updateURL(newState);
                   }}
                   aria-label="Select product image"
-                  className={`h-full w-full rounded-2xl overflow-hidden transition-all duration-300 ${
+                  className={`h-full w-full rounded-3xl overflow-hidden transition-all duration-300 ${
                     isActive
                       ? 'ring-2 ring-chizhi-500 dark:ring-chizhi-400 scale-110 shadow-lg'
                       : 'ring-1 ring-fuguang-200/60 dark:ring-fuguang-700/60 hover:ring-2 hover:ring-fuguang-400/80 dark:hover:ring-fuguang-500/80 hover:scale-105'
                   }`}
                 >
-                  <div className="relative h-full w-full bg-gradient-to-br from-shanfan-100/60 to-fuguang-100/40 dark:from-yuepo-800/60 dark:to-shanfan-900/40 group">
+                  <div className="relative h-full w-full group">
                     {/* 装饰性边框 */}
                     <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-fuguang-300/40 dark:border-fuguang-600/40 rounded-tl-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-chizhi-300/40 dark:border-chizhi-600/40 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

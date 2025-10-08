@@ -1,15 +1,59 @@
+'use client';
+
+import React, { useEffect } from 'react';
+
 import { CheckIcon } from '@heroicons/react/24/outline';
 import { AddToCart } from 'components/cart/add-to-cart';
 import Price from 'components/price';
 import { Product } from 'lib/shopify/types';
 import { ProductPageData } from 'lib/types/product-page-data';
 import { VariantSelector } from './variant-selector';
+import { useProduct } from 'components/product/product-context';
+import { useUpdateURL } from 'components/product/product-context';
 
 /**
  * 商品基本信息组件 - 包含标题、价格、规格选择和购买按钮
  * 用于商品页面上半部分的基本信息展示
+ * 功能：
+ * 1. 动态展示当前用户选择的规格（Variant）的价格；
+ * 2. 未选择时回退到商品的最小变体价格；
  */
 export function ProductBasicInfo({ product, productPageData }: { product: Product, productPageData?: ProductPageData }) {
+  const { state, updateOption } = useProduct();
+  const updateURL = useUpdateURL();
+
+  /**
+   * 默认选中第一个可售变体的规格
+   * - 若URL中无规格参数，则根据第一个可售变体设置规格初始值
+   * - 设置完成后同步更新URL参数，便于可分享与返回保持状态
+   */
+  useEffect(() => {
+    if (!product || !product.options || product.options.length === 0) return;
+
+    const optionKeys = product.options.map((o) => o.name.toLowerCase());
+    const hasAllSelected = optionKeys.every((k) => !!state[k]);
+    if (hasAllSelected) return;
+
+    const defaultVariant = product.variants.find((v) => v.availableForSale) ?? product.variants[0];
+    if (!defaultVariant) return;
+
+    let newState = state;
+    defaultVariant.selectedOptions.forEach((opt) => {
+      newState = updateOption(opt.name.toLowerCase(), opt.value);
+    });
+    updateURL(newState);
+  }, [product, state, updateOption, updateURL]);
+
+  // 根据当前选择的规格，计算需要展示的价格（若未选择则回退到最小变体价格）
+  const selectedVariant = product.variants.find((variant) =>
+    variant.selectedOptions.every(
+      (option) => option.value === state[option.name.toLowerCase()]
+    )
+  ) || (product.variants.length === 1 ? product.variants[0] : undefined);
+
+  const displayAmount = selectedVariant?.price.amount ?? product.priceRange.minVariantPrice.amount;
+  const displayCurrencyCode = selectedVariant?.price.currencyCode ?? product.priceRange.minVariantPrice.currencyCode;
+
   return (
     <div className="space-y-8 animate-fade-in">
       {/* 商品标题和价格区域 */}
@@ -33,8 +77,8 @@ export function ProductBasicInfo({ product, productPageData }: { product: Produc
               <div className="absolute bottom-1 right-1 w-4 h-4 border-b border-r border-white/30 rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
               <Price
-                amount={product.priceRange.minVariantPrice.amount}
-                currencyCode={product.priceRange.minVariantPrice.currencyCode}
+                amount={displayAmount}
+                currencyCode={displayCurrencyCode}
                 className="text-xl font-bold tracking-wide"
               />
             </div>
